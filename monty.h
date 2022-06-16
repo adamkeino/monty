@@ -61,6 +61,8 @@ typedef struct globals
 } global_t;
 
 extern global_t vglo;
+int dprintf(int fd, const char *format, ...);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 /* opcode_instructuions*/
 void _push(stack_t **stack, unsigned int line_number);
