@@ -1,6 +1,7 @@
 #include "monty.h"
 
-/** _mod - divides the rest of the division of the second element
+/**
+ * _mod - divides the rest of the division of the second element
  * by the top element of the stack
  *
  * @doubly: head of the linked list
@@ -34,4 +35,28 @@ void _mod(stack_t **doubly, unsigned int cline)
 	aux = (*doubly)->next;
 	aux->n %= (*doubly)->n;
 	_pop(doubly, cline);
+}
+
+/**
+ * _pchar - print the char value of the first element
+ *
+ * @doubly: head of the linked list
+ * @cline: line number;
+ * Return: no return
+ */
+void _pchar(stack_t **doubly, unsigned int cline)
+{
+	if (doubly == NULL || *doubly == NULL)
+	{
+		dprintf(2, "L%u: can't pchar, stack empty\n", cline);
+		free_vglo();
+		exit(EXIT_FAILURE);
+	}
+	if ((*doubly)->n < 0 || (*doubly)->n >= 128)
+	{
+		dprintf(2, "L%u: can't pchar, value out of range\n", cline);
+		free_vglo();
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", (*doubly)->n);
 }
