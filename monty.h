@@ -73,6 +73,7 @@ void _swap(stack_t **doubly, unsigned int cline);
 void _add(stack_t **doubly, unsigned int cline);
 void _nop(stack_t **doubly, unsigned int cline);
 void _sub(stack_t **doubly, unsigned int cline);
+void _div(stack_t **doubly, unsigned int cline);
 
 /*get function*/
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
